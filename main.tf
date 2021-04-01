@@ -23,7 +23,7 @@ module "ec2-instance-trmodule" {
   ami           = "ami-01581ffba3821cdf3"
   instance_type = "t2.micro"
 
-  key_name = "trbvm"
+  key_name = "e.bui-key0"
 }
 
 output "ec2-user" {
