@@ -1,5 +1,5 @@
 
-variable "add_key_name" {
+variable "key_name" {
   type = string
 }
 
@@ -27,7 +27,7 @@ module "ec2-instance-trmodule" {
   ami           = "ami-01581ffba3821cdf3"
   instance_type = "t2.micro"
 
-  key_name = var.add_key_name
+  key_name = var.key_name
 }
 
 output "ec2-user" {
