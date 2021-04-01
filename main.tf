@@ -1,4 +1,8 @@
 
+variable "add_key_name" {
+  type = string
+}
+
 terraform {
   backend "s3" {
     bucket     = "rt-tf-test-bucket"
@@ -23,7 +27,7 @@ module "ec2-instance-trmodule" {
   ami           = "ami-01581ffba3821cdf3"
   instance_type = "t2.micro"
 
-  key_name = "e.bui-key0"
+  key_name = var.add_key_name
 }
 
 output "ec2-user" {
