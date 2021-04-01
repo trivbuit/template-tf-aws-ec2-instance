@@ -3,6 +3,10 @@ variable "key_name" {
   type = string
 }
 
+variable "instance_type" {
+  type = string
+}
+
 terraform {
   backend "s3" {
     bucket     = "rt-tf-test-bucket"
@@ -25,7 +29,7 @@ module "ec2-instance-trmodule" {
   count = 2
 
   ami           = "ami-01581ffba3821cdf3"
-  instance_type = "t2.micro"
+  instance_type = var.instance_type
 
   key_name = var.key_name
 }
